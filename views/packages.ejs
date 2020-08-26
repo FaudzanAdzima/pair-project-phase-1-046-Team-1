@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Packages</title>
+</head>
+<body>
+    <table border="3px">
+        <thead>
+            <tr>
+                <th>Package's Name</th>
+                <th>Durations</th>
+                <th>Price</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <%data.forEach(el=>{%>
+            <tr>
+                <td><%=el.service%></td>
+                <td><%=el.duration%> Minutes</td>
+                <td><%=el.price%></td>
+                <td>
+                    <a><button>Edit</button></a>
+                    <a><button>Delete</button></a>
+                </td>
+            </tr>
+            <%})%>
+        </tbody>
+    </table>
+</body>
+</html>
