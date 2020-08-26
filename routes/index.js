@@ -1,7 +1,9 @@
 const route = require('express').Router()
+const packageRoute = require('./packageRoute')
 
 route.get('/', (req, res) => {
-    res.send('Hello World!')
+    res.render('home')
 })
+route.use('/packages',packageRoute)
 
 module.exports = route
