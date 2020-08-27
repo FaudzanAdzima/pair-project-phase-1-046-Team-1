@@ -1,4 +1,4 @@
-const {User, Package, Staff} = require("../models")
+const {User, Package, Staff, UserPackage} = require("../models")
 
 class UserController {
     static show(req,res){
@@ -45,8 +45,17 @@ class UserController {
         .then(data=>{
             staff = data
             // res.send(packages)
-            res.render('order',{packages, staff})
+            return User.findByPk(req.params.id,{
+                include: [UserPackage]
+            })
+        })
+        .then(user =>{
+            // res.send(user)
+            res.render('order', {packages, staff,user})
         })   
+    }
+    static userpackage(req,res){
+        res.send(req.body)
     }
     static edit(req,res){
         // res.send(req.params)

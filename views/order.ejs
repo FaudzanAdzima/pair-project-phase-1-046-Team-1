@@ -6,10 +6,11 @@
     <title>Order</title>
 </head>
 <body>
-    <form>
+    <form action="/users/userpackage" method="POST">
         <h1>Orders</h1>
+        <input type="hidden" value="<%=user.id%>">
         <label for="">Nama Pemesan</label></br>
-        <input type="text" placeholder="nama user otomatis masuk"></br></br>
+        <input type="text" readonly value="<%=user.fullname%>"></br></br>
         <label for="">Choose Your Package:</label><br/>
         <select name="" id="">
             <option value="">---- Select Packages ---</option>
@@ -35,13 +36,6 @@
                 <td>Bed Room Packages</td>
                 <td>60 Minute</td>
                 <td>150000</td>
-                <td><button>cancel</button></td>
-            </tr>
-            <tr>
-                <td>Garden Packages</td>
-                <td>60 Minute</td>
-                <td>150000</td>
-                <td><button>cancel</button></td>
             </tr>
         </tbody>
     </table>

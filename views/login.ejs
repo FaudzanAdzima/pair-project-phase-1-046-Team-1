@@ -7,7 +7,9 @@
 </head>
 <body>
     <h1>Login</h1>
-    
+    <%if(error.length > 0){%>
+        <%=error[0]%>
+        <%}%>
     <form action="/login" method="POST">
         <label for="username">Username</label><br/>
         <input type="text" name="username"><br/><br/>
