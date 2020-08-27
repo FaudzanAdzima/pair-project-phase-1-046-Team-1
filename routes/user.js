@@ -10,5 +10,6 @@ route.post('/edit', UserController.editPost)
 route.get('/delete/:id', UserController.delete)
 route.post('/userpackage', UserController.userpackage)
 route.get('/:UserId/delete/userpackage/:id', UserController.userPackageDelete)
+route.post('/confirm/:id', UserController.confirm)
 
 module.exports = route

@@ -140,6 +140,27 @@ class UserController {
         })
     }
 
+    static confirm(req,res){
+        let data
+        User.findOne({
+            include: [Package],
+            where:{
+                id: req.params.id
+            }
+        })
+        .then(datas=>{
+            data=datas
+            return Staff.findByPk(req.body.workers)
+        })
+        .then(worker=>{
+            let totalPrice = req.body.totalPrice
+            res.render('confirm',{data,worker,totalPrice})
+        })
+        .catch(err=>{
+            res.send(err)
+        })
+    }
+
 }
 
 module.exports = UserController

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirm</title>
+</head>
+<body>
+    <h2>Terimakasih <%=data.fullname%> Atas Kepercayaannya</h2>
+    <p>
+        <b>Pesanan Anda:</b>
+        <ul>
+            <%data.Packages.forEach(el=>{%>
+            <li><%=el.name%></li>
+            <%})%>
+        </ul>
+        <br>
+        Akan segera dikerjakan oleh <%=worker.fullname%></br>
+        Dengan total biaya adalah Rp. <%=totalPrice%>.
+    </p>
+</body>
+</html>

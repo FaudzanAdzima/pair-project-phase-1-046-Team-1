@@ -45,22 +45,21 @@
         </tbody>
     </table>
     <hr>
-    <form action="users/confirm">
+    <form action="/users/confirm/<%=user.id%>" method="POST">
         <label for="">Total Price</label><br>
         <%let total = 0%>
         <%user.Packages.forEach(el=>{%>
             <%total += el.price%>
             <%})%>
-        <input type="text" readonly value="<%=total%>"><br/></br>
+        <input type="text" name="totalPrice" readonly value="<%=total%>"><br/></br>
         <label for="">Choose Your Workers:</label><br/>
-        <select name="" id="">
+        <select name="workers" id="">
             <option value="">---- Select Workers ---</option>
             <%staff.forEach(el=>{%>
                 <option value="<%=el.id%>"><%=el.fullname%></option>
                 <%})%>
         </select></br></br>
+        <button type="submit">confirm</button>
     </form>
-    <button>confirm</button>
-
 </body>
 </html>
