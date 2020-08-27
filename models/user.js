@@ -38,5 +38,10 @@ module.exports = (sequelize, DataTypes) => {
     let hash = bcrypt.hashSync("B4c0/\/", salt);
     user.password = hash;
   })
+  User.beforeUpdate((user, options) => {
+    let salt = bcrypt.genSaltSync(10);
+    let hash = bcrypt.hashSync("B4c0/\/", salt);
+    user.password = hash;
+  })
   return User;
 };

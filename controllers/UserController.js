@@ -109,7 +109,8 @@ class UserController {
         },{
             where:{
                 id: req.body.id
-            }
+            },
+            individualHooks: true
         })
         .then(()=>{
             res.redirect('/users')
