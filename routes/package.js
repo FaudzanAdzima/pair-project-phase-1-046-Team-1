@@ -1,8 +1,8 @@
 const PackageController = require('../controllers/PackageController')
-
+const authentication = require('../middlewares/authentication')
 const routes = require('express').Router()
 
-
+routes.use(authentication)
 routes.get('/', PackageController.show)
 routes.get('/add', PackageController.add)
 routes.post('/add', PackageController.postAdd)

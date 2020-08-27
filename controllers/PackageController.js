@@ -1,17 +1,19 @@
 const {Package, User} = require('../models')
 
 class PackageController {
-    static show (req, res) {
+    static show (req, res) {        
         Package.findAll()
         .then(packages => {
-            res.render('template', {packages, header: 'List Package'})
+            let role = req.session.user.RoleId
+            res.render('template', {packages, header: 'List Package', role})
         })
         .catch(err => {
             res.send(err)
         })
     }
     static add (req, res) {
-        res.render('template', {header: 'Add Package'})
+        let role = req.session.user.RoleId
+        res.render('template', {header: 'Add Package', role})
     }
     static postAdd (req, res) {
         let obj = {
@@ -35,7 +37,8 @@ class PackageController {
             }
         })
         .then(data => {
-            res.render('template', {data, header: 'Edit Package'})
+            let role = req.session.user.RoleId
+            res.render('template', {data, header: 'Edit Package', role})
         })
         .catch(err => {
             res.sedn(err)

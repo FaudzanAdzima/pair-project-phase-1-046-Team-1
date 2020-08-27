@@ -4,14 +4,16 @@ class StaffController {
     static show (req, res) {
         Staff.findAll()
         .then(staffs => {
-            res.render('template', {staffs, header: 'List Staff'})
+            let role = req.session.user.RoleId
+            res.render('template', {staffs, header: 'List Staff', role})
         })
         .catch(err => {
             res.send(err)
         })
     }
     static add (req, res) {
-        res.render('template', {header: 'Add Staff'})     
+        let role = req.session.user.RoleId
+        res.render('template', {header: 'Add Staff', role})     
     }
     static postAdd (req, res) {
         let obj = {
@@ -38,7 +40,8 @@ class StaffController {
             }
         })
         .then(data => {
-            res.render('template', {data, header: 'Edit Staff'})
+            let role = req.session.user.RoleId
+            res.render('template', {data, header: 'Edit Staff', role})
         })
         .catch(err => {
             res.sedn(err)
