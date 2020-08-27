@@ -71,6 +71,19 @@ class UserController {
             console.log(err)
         })
     }
+
+    static userPackageDelete(req,res){
+        // res.send(req.params)
+        UserPackage.destroy({
+            where:{
+                id:req.params.id
+            }
+        })
+        .then(()=>{
+            res.redirect(`/users/order/${req.params.UserId}`)
+        })
+    }
+
     static edit(req,res){
         // res.send(req.params)
         User.findByPk(req.params.id)
