@@ -46,7 +46,7 @@ class UserController {
             staff = data
             // res.send(packages)
             return User.findByPk(req.params.id,{
-                include: [UserPackage]
+                include: [Package]
             })
         })
         .then(user =>{
@@ -55,7 +55,21 @@ class UserController {
         })   
     }
     static userpackage(req,res){
-        res.send(req.body)
+        // res.send(req.body)
+        UserPackage.create({
+            status: false,
+            UserId: req.body.UserId,
+            PackageId: req.body.PackageId,
+            createdAt: new Date,
+            updatedAt: new Date
+        })
+        .then(()=>{
+            res.redirect(`/users/order/${req.body.UserId}`)
+        })
+        .catch(err=>{
+            res.send(err)
+            console.log(err)
+        })
     }
     static edit(req,res){
         // res.send(req.params)
