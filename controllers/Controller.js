@@ -16,9 +16,9 @@ class Controller {
         .then(data=>{
             
             if(data){
-                // res.send(req.body)
+                // res.send(data)
                 let flag = bcrypt.compareSync(req.body.password, data.password)
-                res.send(bcrypt.compareSync(req.body.password, data.password))
+                // res.send(bcrypt.compareSync(req.body.password, data.password))
                 if(flag){
                     res.redirect(`/users/order/${data.id}`)
                 }else{

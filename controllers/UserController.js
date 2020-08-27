@@ -76,11 +76,16 @@ class UserController {
         // res.send(req.params)
         UserPackage.destroy({
             where:{
-                id:req.params.id
+                PackageId: req.params.id,
+                UserId: req.params.UserId
             }
         })
         .then(()=>{
             res.redirect(`/users/order/${req.params.UserId}`)
+        })
+        .catch(err=>{
+            res.send(err)
+            console.log(err)
         })
     }
 
