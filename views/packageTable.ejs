@@ -1,0 +1,27 @@
+<div>
+    <h3><a href="/packages/add">Add Package</a></h3>
+</div>
+<table border="1">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Duration</th>
+            <th>Price</th>
+            <th>Description</th>
+            <th>Option</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% for(const el of packages) { %>
+        <tr>
+            <td><%= el.id %></td>
+            <td><%= el.name %></td>
+            <td><%= el.duration %> minutes</td>
+            <td><%= el.price %></td>
+            <td><%= el.description %></td>
+            <td><a href="/packages/edit/<%= el.id %>">Edit</a> | <a href="/packages/delete/<%= el.id %>">Delete</a></td>
+        </tr>
+        <% } %>
+    </tbody>
+</table>
