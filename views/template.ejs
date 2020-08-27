@@ -13,11 +13,17 @@
                 <h1><%= header %></h1>
             </header>
             <% if(header === 'List Package') { %>
-                <%- include('packageTable') %>
+                <%- include('package/packageTable') %>
             <% } else if(header === 'Add Package') {%>
-                <%- include ('packageAddForm') %>
+                <%- include ('package/packageAddForm') %>
             <% } else if(header === 'Edit Package') {%>
-                <%- include ('packageEditForm') %>
+                <%- include ('package/packageEditForm') %>
+            <% } else if(header === 'List Staff') { %>
+                <%- include('staff/staffTable') %>
+            <% } else if(header === 'Add Staff') {%>
+                <%- include ('staff/staffAddForm') %>
+            <% } else if(header === 'Edit Staff') {%>
+                <%- include ('staff/staffEditForm') %>
             <% } %>
         </div>
     </main>

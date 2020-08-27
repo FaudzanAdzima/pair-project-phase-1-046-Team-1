@@ -61,6 +61,19 @@ class PackageController {
             res.send(err)
         })
     }
+    static delete (req, res) {
+        Package.destroy({
+            where: {
+                id: +req.params.id
+            }
+        })
+        .then(data => {
+            res.redirect('/packages')
+        })
+        .catch(err => {
+            res.send(err)
+        })
+    }
 }
 
 module.exports = PackageController
