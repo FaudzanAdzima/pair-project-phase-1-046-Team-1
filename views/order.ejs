@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order</title>
+</head>
+<body>
+    <form>
+        <h1>Orders</h1>
+        <label for="">Nama Pemesan</label></br>
+        <input type="text" placeholder="nama user otomatis masuk"></br></br>
+        <label for="">Choose Your Package:</label><br/>
+        <select name="" id="">
+            <option value="">---- Select Packages ---</option>
+            <%packages.forEach(el=>{%>
+                <option value="<%=el.id%>"><%=el.name%></option>
+            <%})%>
+        </select></br></br>
+        
+        <button>Choose</button>
+    </form>
+    <hr>
+    <table border="3px">
+        <thead>
+            <tr>
+                <th>Package's Name</th>
+                <th>Duration</th>
+                <th>Price</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Bed Room Packages</td>
+                <td>60 Minute</td>
+                <td>150000</td>
+                <td><button>cancel</button></td>
+            </tr>
+            <tr>
+                <td>Garden Packages</td>
+                <td>60 Minute</td>
+                <td>150000</td>
+                <td><button>cancel</button></td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <form>
+        <label for="">Total Price</label><br>
+        <input type="text" readonly value="300000"><br/></br>
+        <label for="">Choose Your Workers:</label><br/>
+        <select name="" id="">
+            <option value="">---- Select Workers ---</option>
+            <%staff.forEach(el=>{%>
+                <option value="<%=el.id%>"><%=el.fullname%></option>
+                <%})%>
+        </select></br></br>
+    </form>
+    <button>confirm</button>
+
+</body>
+</html>
