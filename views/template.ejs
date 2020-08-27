@@ -14,6 +14,10 @@
             </header>
             <% if(header === 'List Package') { %>
                 <%- include('packageTable') %>
+            <% } else if(header === 'Add Package') {%>
+                <%- include ('packageAddForm') %>
+            <% } else if(header === 'Edit Package') {%>
+                <%- include ('packageEditForm') %>
             <% } %>
         </div>
     </main>
