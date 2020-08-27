@@ -12,7 +12,7 @@
         <label for="">Nama Pemesan</label></br>
         <input type="text" name="fullname" readonly value="<%=user.fullname%>"></br></br>
         <label for="">Choose Your Package:</label><br/>
-        <select name="PackageId" id="">
+        <select name="PackageId" id="" required>
             <option value="">---- Select Packages ---</option>
             <%packages.forEach(el=>{%>
                 <option value="<%=el.id%>"><%=el.name%></option>
@@ -46,7 +46,11 @@
     <hr>
     <form>
         <label for="">Total Price</label><br>
-        <input type="text" readonly value="300000"><br/></br>
+        <%let total = 0%>
+        <%user.Packages.forEach(el=>{%>
+            <%total += el.price%>
+            <%})%>
+        <input type="text" readonly value="<%=total%>"><br/></br>
         <label for="">Choose Your Workers:</label><br/>
         <select name="" id="">
             <option value="">---- Select Workers ---</option>
