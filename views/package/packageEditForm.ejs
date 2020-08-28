@@ -1,0 +1,11 @@
+<form action="/packages/edit/<%= data.id %>" method="post">
+    <label for="name">Name</label><br>
+    <input type="text" name="name" id="name" value="<%= data.name %>"><br>
+    <label for="duration">Duration</label><br>
+    <input type="text" name="duration" id="duration" value="<%= data.duration %>"><br>
+    <label for="price">Price</label><br>
+    <input type="text" name="price" id="price" value="<%= data.price %>"><br>
+    <label for="description">Description</label><br>
+    <input type="text" name="description" id="description" value="<%= data.description %>"><br>
+    <button type="submit">Edit Package</button>
+</form>

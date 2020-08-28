@@ -1,0 +1,25 @@
+<div>
+    <h3><a href="/staffs/add">Add New Staff</a></h3>
+</div>
+<table border="1">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Status</th>
+            <th>Option</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% for(const el of staffs) { %>
+        <tr>
+            <td><%= el.id %></td>
+            <td><%= el.fullName() %></td>
+            <td><%= el.gender %></td>
+            <td><%= el.status %></td>
+            <td><a href="/staffs/edit/<%= el.id %>">Edit</a> | <a href="/staffs/delete/<%= el.id %>">Delete</a></td>
+        </tr>
+        <% } %>
+    </tbody>
+</table>
