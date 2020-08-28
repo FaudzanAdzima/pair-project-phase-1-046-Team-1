@@ -13,7 +13,6 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       User.belongsToMany(models.Package,{through:models.UserPackage})
-      User.hasOne(models.Profile)
       User.belongsTo(models.Role,({foreignKey:'RoleId'}))
       //super many to many
       User.hasMany(models.UserPackage)
@@ -27,6 +26,8 @@ module.exports = (sequelize, DataTypes) => {
     lastName: DataTypes.STRING,
     email: DataTypes.STRING,
     password: DataTypes.STRING,
+    phone: DataTypes.STRING,
+    address: DataTypes.STRING,
     RoleId: DataTypes.INTEGER
   }, {
     sequelize,

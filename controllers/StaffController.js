@@ -5,7 +5,7 @@ class StaffController {
         Staff.findAll()
         .then(staffs => {
             let role = req.session.user.RoleId
-            res.render('template', {staffs, header: 'List Staff', role})
+            res.render('admin/template', {staffs, header: 'List Staff', role})
         })
         .catch(err => {
             res.send(err)
@@ -13,7 +13,7 @@ class StaffController {
     }
     static add (req, res) {
         let role = req.session.user.RoleId
-        res.render('template', {header: 'Add Staff', role})     
+        res.render('admin/template', {header: 'Add Staff', role})     
     }
     static postAdd (req, res) {
         let obj = {
@@ -41,7 +41,7 @@ class StaffController {
         })
         .then(data => {
             let role = req.session.user.RoleId
-            res.render('template', {data, header: 'Edit Staff', role})
+            res.render('admin/template', {data, header: 'Edit Staff', role})
         })
         .catch(err => {
             res.sedn(err)

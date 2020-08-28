@@ -3,7 +3,7 @@ const authentication = (req, res, next) => {
     if(req.session.user){
       next()
     }else{
-      req.app.locals.errors = `You don't have any access, please login again`
+      req.app.locals.errors = `You don't have any access, please login`
       res.redirect('/user/login')
     }
     

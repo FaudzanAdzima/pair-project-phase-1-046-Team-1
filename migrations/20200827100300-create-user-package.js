@@ -9,7 +9,16 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       status: {
-        type: Sequelize.BOOLEAN
+        type: Sequelize.STRING
+      },
+      date: {
+        type: Sequelize.DATEONLY
+      },
+      time: {
+        type: Sequelize.STRING
+      },
+      address: {
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,

@@ -1,0 +1,17 @@
+<form action="/user/profile/edit" method="post">
+    <label for="firstName">First Name</label><br>
+    <input type="text" name="firstName" id="firstName" value="<%= data.firstName %>"><br>
+    <label for="lastName">Last Name</label><br>
+    <input type="text" name="lastName" id="lastName" value="<%= data.lastName %>"><br>
+    <label for="email">Email Registered</label><br>
+    <input type="email" name="email" id="email" value="<%= data.email %>" disabled><br>
+    <label for="createdAt">Account Created</label><br>
+    <input type="text" name="createdAt" id="createdAt" value="<%= getDate(data.createdAt) %>" disabled><br>
+
+        <label for="phone">Phone</label><br>
+        <input type="text" name="phone" id="phone" value="<%= data.phone %>"><br>
+        <label for="address">Last Name</label><br>
+        <input type="text" name="address" id="address" value="<%= data.address %>"><br>
+
+    <button type="submit">Edit Profile</button>
+</form>

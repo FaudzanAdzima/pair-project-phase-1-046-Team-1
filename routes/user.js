@@ -10,6 +10,13 @@ routes.post('/login', UserController.postLogin)
 
 routes.use(authentication)
 
+routes.get('/profile/edit', UserController.edit)
+routes.post('/profile/edit', UserController.postEdit)
+
+routes.get('/request/create', UserController.create)
+routes.post('/request/create', UserController.postCreate)
+
+routes.get('/request/list', UserController.requestList)
 
 
 module.exports = routes

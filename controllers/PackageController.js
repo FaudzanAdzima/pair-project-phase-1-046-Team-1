@@ -5,7 +5,7 @@ class PackageController {
         Package.findAll()
         .then(packages => {
             let role = req.session.user.RoleId
-            res.render('template', {packages, header: 'List Package', role})
+            res.render('admin/template', {packages, header: 'List Package', role})
         })
         .catch(err => {
             res.send(err)
@@ -13,7 +13,7 @@ class PackageController {
     }
     static add (req, res) {
         let role = req.session.user.RoleId
-        res.render('template', {header: 'Add Package', role})
+        res.render('admin/template', {header: 'Add Package', role})
     }
     static postAdd (req, res) {
         let obj = {
@@ -38,7 +38,7 @@ class PackageController {
         })
         .then(data => {
             let role = req.session.user.RoleId
-            res.render('template', {data, header: 'Edit Package', role})
+            res.render('admin/template', {data, header: 'Edit Package', role})
         })
         .catch(err => {
             res.sedn(err)
