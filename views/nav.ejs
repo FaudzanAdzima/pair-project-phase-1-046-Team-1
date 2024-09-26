@@ -1,7 +1,14 @@
 <nav>
     <ul>
         <li><a href="/">Home</a></li>
+        <% if (role === 1) { %>
         <li><a href="/packages">List Package</a></li>
+        <li><a href="/staffs">List Staff</a></li>
         <li><a href="/users">List User</a></li>
+        <% } else { %>
+        <li><a href="/user/profile/edit">Edit Profile</a></li>
+        <li><a href="/user/request/list">My Request</a></li>
+        <% } %>
+        <li><a href="/logout">Logout</a></li>
     </ul>
 </nav>

@@ -17,6 +17,9 @@ module.exports = (sequelize, DataTypes) => {
   };
   UserPackage.init({
     status: DataTypes.STRING,
+    date: DataTypes.DATEONLY,
+    time: DataTypes.STRING,
+    address: DataTypes.STRING,
     UserId: DataTypes.INTEGER,
     PackageId: DataTypes.INTEGER
 

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+               @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Quicksand', sans-serif;
+        }
+        .btn {
+            padding: 8px 14px;
+            border-radius: 5px;
+            background: #ffffff;
+            color: #353535;
+            margin-right: 10px;
+        }
+        .btn:hover{
+            background: rgb(81, 155, 240);
+            color: #ffffff;
+        }
+        a {
+            text-decoration: none;
+        }
+        nav {
+        margin:auto;
+        text-align: center;
+        width: 100%;
+        font-family: arial;
+        } 
+        nav ul {
+            background:#37988e;
+            padding: 0 20px;
+            list-style: none;
+            position: relative;
+            display: inline-table;
+            width: 100%;
+        }
+        nav ul li{
+            float:left;
+        }
+        nav ul li:hover{
+            background:#d68d9a;
+        }
+        nav ul li:hover a{
+            color:#000;
+        }
+        nav ul li a{
+            display: block;
+            padding: 25px;
+            color: #fff;
+            text-decoration: none;
+        }
+        .header h1 {
+            text-align: center;
+            font-size: 50px;
+        }
+        .content h3 {
+            text-align: center;
+            width: 130px;
+            margin: 20px auto;
+            border-radius: 5px;
+            background-color: cornflowerblue;
+        }
+        .content h3 a{
+            text-decoration: none;
+            color: #fff;
+        }
+        .content h3:hover {
+            cursor: pointer;
+            background-color: royalblue ;
+        }
+        form {
+            margin: 0 auto;
+            font-size: 18px;
+            width: 300px;
+        }
+        label {
+            font-weight: bolder;
+        }
+        input[type=text], select {
+            border-radius: 5px;
+            margin-bottom: 10px;
+            width: 300px;
+        }
+        button:hover {
+            cursor: pointer;
+        }
+        table {
+            margin: 0 auto;
+            border-collapse: collapse;
+            font-size: 18px;
+            min-width: 400px;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        }
+        table thead tr {
+            background-color: #009879;
+            color: #fff;
+            font-weight: bold;
+        }
+        table th, table td {
+            padding: 12px 15px;
+        }
+        table tbody tr {
+            border-bottom: 1px solid #dddddd;
+        }
+        table tbody tr:nth-of-type(even) {
+            background-color: #f3f3f3;
+        }
+        table tbody tr td button{
+            text-decoration: none;
+        }
+        table tbody tr td a{
+            text-decoration: none;
+            color: cornflowerblue;
+        }
+        table tbody tr td a:hover{
+            cursor: pointer;
+        }
+    </style>
+    <title>Hack8Clean</title>
+</head>
+<body>
+    <%- include ('../nav') %>
+    <main>
+        <div class="header">
+            <h1><%= header %></h1>
+        </div>
+        <div class="content">
+            <% if(header === 'Edit Profil') { %>
+                <%- include('profileForm') %>
+            <% } else if (header === 'Create Request') { %>
+                <%- include('requestForm') %>
+            <% } else{%>
+                <%- include ('requestTable') %>
+            <% } %>
+        </div>
+    </main>
+</body>
+</html>

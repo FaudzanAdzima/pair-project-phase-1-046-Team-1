@@ -153,13 +153,48 @@
      cursor: pointer;
  }
 </style>
-    <title>Hack8Clean</title>
+    <title>Document</title>
 </head>
 <body>
-    <%- include ('nav') %>
-    <h1>Welcome back, <%= data.fullName() %></h1>
-    <% if(role == 2) { %>
-        <h3><a href="user/request/create">Book Now</a></h3>
-    <% } %>
+    <main>
+        <div class="content">
+            <div class="header">
+                <h1><%= header %></h1>
+            </div>
+            <% if(header === 'Login Page') { %>
+                <% if (errors) { %>
+                    <p style="text-align: center;"><%= errors %></p>
+                <% } %>
+                <form action="/user/login" method="post">
+                    <label for="email">Email</label><br>
+                    <input type="email" name="email" id="email"><br>
+                    <label for="password">Password</label><br>
+                    <input type="password" name="password" id="pasword"><br>
+                    <button type="submit">Login</button>
+                </form>
+                <div style="text-align: center;">
+                    <a href="/user/register" >Don't have any account?</a>
+                </div>
+               
+                <% } else { %>
+                <form action="/user/register" method="post">
+                    <label for="firstName">First Name</label><br>
+                    <input type="text" name="firstName" id="firstName"><br>
+                    <label for="lastName">Last Name</label><br>
+                    <input type="text" name="lastName" id="lastName"><br>
+                    <label for="email">Email</label><br>
+                    <input type="email" name="email" id="email"><br>
+                    <label for="password">Password</label><br>
+                    <input type="password" name="password" id="pasword"><br>
+                    <button type="submit">Create Account</button>
+                </form>
+                <div style="text-align: center;">
+                    a href="/user/login" >Have an account?</a>
+                </div>
+                <
+                <% } %>
+        </div>
+    </main>   
 </body>
 </html>
+

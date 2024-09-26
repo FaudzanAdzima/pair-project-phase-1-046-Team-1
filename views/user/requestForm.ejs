@@ -1,0 +1,15 @@
+<form action="/user/request/create" method="post">
+    <label for="PackageId">Available Package</label><br>  
+    <select name="PackageId" id="PackageId">
+        <% for(const package of packages) { %>
+        <option value="<%= package.id %>"><%= package.name %> | <%= package.getPrice() %> | <%= package.duration %> minutes </option>
+        <% } %>
+    </select><br>    
+    <label for="date">Date</label><br>
+    <input type="date" name="date" id="date"><br>
+    <label for="time">Time</label><br>
+    <input type="text" name="time" id="time"><br>
+    <label for="address">Address</label><br>
+    <input type="text" name="address" id="address" value="<%= data.address %>"><br>
+    <button type="submit">Create Request</button>
+</form>

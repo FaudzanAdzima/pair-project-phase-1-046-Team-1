@@ -12,35 +12,6 @@
  body {
      font-family: 'Quicksand', sans-serif;
  }
- .jumbotron {
-     height: 700px;
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     background: #e6e6e6;
-     color: #818181;
- }
- .jumbotron-inner {
-     width: 70%;
- }
- .jumbotron-inner h1 {
-     font-size: 30px;
-     font-weight: 700;
-     text-align: center;
-     margin-bottom: 20px;
- }
- .jumbotron-inner p{
-     font-size: 17px;
-     font-weight: 500;
- }
- .jumbotron-btn {
-     display: flex;
-     justify-content: center;
-     margin-top: 20px;
- }
- .jumbotron-btn a {
-     text-decoration: none;
- }
  .btn {
      padding: 8px 14px;
      border-radius: 5px;
@@ -156,10 +127,30 @@
     <title>Hack8Clean</title>
 </head>
 <body>
-    <%- include ('nav') %>
-    <h1>Welcome back, <%= data.fullName() %></h1>
-    <% if(role == 2) { %>
-        <h3><a href="user/request/create">Book Now</a></h3>
-    <% } %>
+    <%- include ('../nav') %>
+    <main>
+        <% if(role === 1) { %>  
+            <div class="header">
+                <h1><%= header %></h1>
+            </div>  
+        <div class="content">                  
+                <% if(header === 'List Package') { %>
+                    <%- include('package/packageTable') %>
+                <% } else if(header === 'Add Package') {%>
+                    <%- include ('package/packageAddForm') %>
+                <% } else if(header === 'Edit Package') {%>
+                    <%- include ('package/packageEditForm') %>
+                <% } else if(header === 'List Staff') { %>
+                    <%- include('staff/staffTable') %>
+                <% } else if(header === 'Add Staff') {%>
+                    <%- include ('staff/staffAddForm') %>
+                <% } else if(header === 'Edit Staff') {%>
+                    <%- include ('staff/staffEditForm') %>
+                <% } %>
+        </div>
+        <% } else { %>
+            <h3>You don't have any access, please login as admin!</h3>
+        <% } %>
+    </main>
 </body>
 </html>

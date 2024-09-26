@@ -15,6 +15,9 @@ module.exports = (sequelize, DataTypes) => {
       //super many to many
       Package.hasMany(models.UserPackage)
     }
+    getPrice(){
+      return `Rp. ${this.price.toLocaleString()}`
+    }
   };
   Package.init({
     name: DataTypes.STRING,
